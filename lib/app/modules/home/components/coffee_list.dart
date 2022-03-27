@@ -47,9 +47,9 @@ class _CoffeeListState extends State<CoffeeList> {
                 width: getSize(pivot, index),
                 height: getSize(pivot, index),
                 child: Hero(
-                  tag: '${index + 1}.png',
+                  tag: 'assets/${index + 1}.png',
                   child: Image.asset(
-                    '${index + 1}.png',
+                    'assets/${index + 1}.png',
                     fit: BoxFit.fitHeight,
                   ),
                 ),
@@ -68,7 +68,7 @@ class _CoffeeListState extends State<CoffeeList> {
             onTap: () {
               Get.toNamed(Routes.COFFEE_INFORMATION,
                   arguments: CoffeeModel(
-                      path: '${pivot + 3}.png',
+                      path: 'assets/${pivot + 3}.png',
                       name: widget.names[pivot + 2],
                       price: widget.prices[pivot + 2]));
             },
@@ -127,7 +127,7 @@ class _CoffeeListState extends State<CoffeeList> {
                     opacity: getTextOpacity(pivot, index),
                     duration: Duration(milliseconds: animationVelocity),
                     child: Text(
-                      widget.prices[index].toStringAsFixed(2) + ' €',
+                      "\u{20B9}" + (widget.prices[index] * 90).toStringAsFixed(2),
                       textAlign: TextAlign.center,
                       maxLines: 2,
                       overflow: TextOverflow.fade,

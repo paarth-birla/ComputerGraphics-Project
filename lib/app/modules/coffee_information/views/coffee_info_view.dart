@@ -65,9 +65,9 @@ class CoffeeInformationView extends GetView<CoffeeInformationController> {
                         elevation: 20,
                         borderRadius: BorderRadius.circular(5),
                         child: Text(
-                          coffeeModel.price.round().toString() + '€',
+                          "\u{20B9}" + (coffeeModel.price * 90).round().toString(),
                           style: const TextStyle(
-                              fontSize: 80,
+                              fontSize: 60,
                               color: Colors.white,
                               fontWeight: FontWeight.w900),
                         ),
