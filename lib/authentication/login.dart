@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
+import 'package:coffee_app/app/routes/app_pages.dart';
 import 'package:coffee_app/authentication/signup.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final signupPurpleGradient = LinearGradient(colors: [
@@ -35,7 +39,7 @@ class LogInScreen extends StatelessWidget {
               SizedBox(height: 10),
               AnimatedImage(),
               SizedBox(
-                height: 40.0,
+                height: 20.0,
               ),
               Text("Welcome back!",
                   style: GoogleFonts.lato(
@@ -43,7 +47,7 @@ class LogInScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       color: Colors.white)),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               Text(
                 "Please, Log In",
@@ -122,6 +126,9 @@ class LogInScreen extends StatelessWidget {
                 height: 50.0,
               ),
               InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.HOME);
+                },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.85,
                   height: 60.0,
@@ -151,8 +158,7 @@ class LogInScreen extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => SignUpScreen()));
+                  Get.toNamed(Routes.Signup);
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.85,
@@ -209,7 +215,7 @@ class _AnimatedImageState extends State<AnimatedImage>
       children: [
         SlideTransition(
           position: _animation,
-          child: Image.asset('assets/person_&_dog.png'),
+          child: Image.asset('assets/person_&_dog.png', height:200),
         ),
       ],
     );

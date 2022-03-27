@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
+import 'package:coffee_app/app/routes/app_pages.dart';
 import 'package:coffee_app/authentication/login.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final signupPurpleGradient = LinearGradient(colors: [
@@ -35,7 +39,7 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(height: 10),
               AnimatedImage(),
               SizedBox(
-                height: 40.0,
+                height: 20.0,
               ),
               Text("Hi there !",
                   style: GoogleFonts.lato(
@@ -43,7 +47,7 @@ class SignUpScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       color: Colors.white)),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               Text(
                 "Let's Get Started",
@@ -122,6 +126,9 @@ class SignUpScreen extends StatelessWidget {
                 height: 50.0,
               ),
               InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.HOME);
+                },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.85,
                   height: 60.0,
@@ -151,8 +158,7 @@ class SignUpScreen extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => LogInScreen()));
+                  Get.toNamed(Routes.Login);
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.85,
@@ -207,10 +213,10 @@ class _AnimatedImageState extends State<AnimatedImage>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset('assets/clouds.png'),
+        Image.asset('assets/clouds.png', height: 200,),
         SlideTransition(
           position: _animation,
-          child: Image.asset('assets/rocket_person.png'),
+          child: Image.asset('assets/rocket_person.png', height:200),
         ),
       ],
     );

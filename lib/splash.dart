@@ -21,7 +21,7 @@ class Splash_Screen extends StatelessWidget {
             end: Alignment.bottomLeft,
             colors: [Color(0xffc9711a), Color(0xffe2bc97)],
           ),
-          navigateAfterSeconds: Routes.HOME,
+          navigateAfterSeconds: Routes.Login,
         ),
         AnimatedContainer(
             duration: const Duration(seconds: 1),

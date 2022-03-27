@@ -4,6 +4,8 @@ import 'package:coffee_app/app/modules/coffee_information/binding/coffee_info_bi
 import 'package:coffee_app/app/modules/coffee_information/views/coffee_info_view.dart';
 import 'package:coffee_app/app/modules/home/binding/home_binding.dart';
 import 'package:coffee_app/app/modules/home/views/home_view.dart';
+import 'package:coffee_app/authentication/login.dart';
+import 'package:coffee_app/authentication/signup.dart';
 import 'package:coffee_app/splash.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +19,14 @@ class AppPages
     GetPage(
       name: _Paths.SPLASH,
       page: () => const Splash_Screen(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => LogInScreen(),
+    ),
+    GetPage(
+      name: _Paths.SIGNUP,
+      page: () => SignUpScreen(),
     ),
     GetPage(
       name: _Paths.HOME,
